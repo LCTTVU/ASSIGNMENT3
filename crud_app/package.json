@@ -1,0 +1,12 @@
+{
+  "name": "crud_app",
+  "version": "1.0.0",
+  "description": "assignment 3 crud with express and mongodb",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "lab123",
+  "license": "ISC"
+}
