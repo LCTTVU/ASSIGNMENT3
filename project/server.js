@@ -9,7 +9,6 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
 
-
 app.get("/phones", function(req, res, next) {
 	db.all("SELECT * FROM phones", [], function(err, rows) {
 		if (err) {
@@ -34,7 +33,9 @@ app.get("/phones/:id", function(req, res, next) {
 
 app.post("/phones", function(req, res, next) {
 	var item = req.body;
-	db.run(`INSERT INTO phones (image, brand, model, os, screensize) VALUES (?,?,?,?,?)`, [item.image, item.brand, item.model, item.os, item.screensize], function(err, result) {
+	db.run(`INSERT INTO phones (image, brand, model, os, screensize) VALUES (?,?,?,?,?)`,
+	[item.image, item.brand, item.model, item.os, item.screensize],
+	function(err, result) {
 		if (err) {
 			res.status(400).json({"error" : err.message});
 			return;
@@ -43,19 +44,18 @@ app.post("/phones", function(req, res, next) {
 	});
 })
 
-
-
-app.put("/phones/:id", function(req, res, next) {
-	var item = req.body;
-	db.run(`UPDATE phones SET brand=?, model=?, os=?, image=?, screensize=? WHERE id=?`, [item.id, item.image, item.brand, item.model, item.os, item.screensize], function(err, result) {
-		if (err) {
-			res.status(400).json({"error" : err.message});
-			return;
-		}
-		return res.status(200).json({"changes" : this.changes});
-	});
+app.patch("/phones/:id", (req, res, next) => {
+    var item = req.body;
+    db.run(`UPDATE phones SET image = ?, brand = ?, model = ?, os = ?, screensize = ? WHERE id = ?`,
+	[item.image, item.brand, item.model, item.os, item.screensize, item.id],
+    function (err, result) {
+            if (err) {
+                res.status(400).json({ "error": res.message })
+                return;
+            }
+            res.status(200).json({ "updatedID": this.changes });
+        });
 });
-
 
 app.delete("/phones/:id", function(req, res, next) {
 	db.run("DELETE FROM phones WHERE id=" + [req.params.id], function(err, result) {
