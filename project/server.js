@@ -10,27 +10,61 @@ app.use(bodyParser.json());
 
 
 
-app.get("/phones", async function(req, res) {
-	const phones = await db.getAllPhones();
-	return res.status(200).json({ phones });
+app.get("/phones", function(req, res, next) {
+	db.all("SELECT * FROM phones", [], function(err, rows) {
+		if (err) {
+			res.status(400).json({"error" : err.message});
+			return;
+		}
+		return res.status(200).json({ rows });
+	});
 });
 
 
-app.post("/phones", async function(req, res) {
-	const results = await db.createPhone(req.body);
-	return res.status(201).json({ id: results[0] })
+app.get("/phones/:id", function(req, res, next) {
+	db.all("SELECT id, brand, model, os, image, screensize FROM phones WHERE id=" + [req.params.id], function(err, row) {
+		if (err) {
+			res.status(400).json({"error" : err.message});
+			return;
+		}
+		return res.status(200).json({ row });
+	});
 })
 
 
-app.put("/phones/:id", async function(req,res) {
-	const id = await db.updatePhone(req.params.id, req.body);
-	return res.status(200).json({ id });
+app.post("/phones", function(req, res, next) {
+	var item = req.body;
+	db.run(`INSERT INTO phones (image, brand, model, os, screensize) VALUES (?,?,?,?,?)`, [item.image, item.brand, item.model, item.os, item.screensize], function(err, result) {
+		if (err) {
+			res.status(400).json({"error" : err.message});
+			return;
+		}
+		return res.status(201).json({ "id" : this.lastID });
+	});
+})
+
+
+
+app.put("/phones/:id", function(req, res, next) {
+	var item = req.body;
+	db.run(`UPDATE phones SET brand=?, model=?, os=?, image=?, screensize=? WHERE id=?`, [item.id, item.image, item.brand, item.model, item.os, item.screensize], function(err, result) {
+		if (err) {
+			res.status(400).json({"error" : err.message});
+			return;
+		}
+		return res.status(200).json({"changes" : this.changes});
+	});
 });
 
 
-app.delete("/phones/:id", async function(req, res) {
-	const id = await db.deletePhone(req.params.id);
-	return res.status(200).json({ id });
+app.delete("/phones/:id", function(req, res, next) {
+	db.run("DELETE FROM phones WHERE id=" + [req.params.id], function(err, result) {
+		if (err) {
+			res.status(400).json({"error" : err.message});
+			return;
+		}
+		return res.status(200).json({"deleted" : this.changes});
+	});
 })
 
 
@@ -39,25 +73,8 @@ app.get("/test", function(req, res) {
 });
 
 app.listen(3000, function() {
-    console.log("Web server up and running");
+    console.log("Web server up and running at http://localhost:3000/");
 });
-
-
-function getAllPhones() {
-
-}
-
-function createPhone(phone) {
-
-}
-
-function updatePhone(id, phone) {
-
-}
-
-function deletePhone(id) {
-	
-}
 
 
 function my_database(filename) {
@@ -73,10 +90,10 @@ function my_database(filename) {
 		db.run(`
         	CREATE TABLE IF NOT EXISTS phones
         	(id 	INTEGER PRIMARY KEY,
+			image 	CHAR(254) NOT NULL,
         	brand	CHAR(100) NOT NULL,
         	model 	CHAR(100) NOT NULL,
         	os 	CHAR(10) NOT NULL,
-        	image 	CHAR(254) NOT NULL,
         	screensize INTEGER NOT NULL
         	)`);
 		db.all(`select count(*) as count from phones`, function(err, result) {
