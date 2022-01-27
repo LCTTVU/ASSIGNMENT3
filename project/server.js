@@ -57,6 +57,10 @@ app.put("/phones/:id", (req, res, next) => {
                 res.status(400).json({ "error": res.message })
                 return;
             }
+			else if (result.length < 1) {
+				res.status(404).json({});
+				return;
+			}
             res.status(200).json({ "updatedID": this.changes });
         });
 });
@@ -65,6 +69,10 @@ app.delete("/phones/:id", function(req, res, next) {
 	db.run("DELETE FROM phones WHERE id=" + [req.params.id], function(err, result) {
 		if (err) {
 			res.status(400).json({"error" : err.message});
+			return;
+		}
+		else if (row == "") {
+			res.status(404).json({});
 			return;
 		}
 		return res.status(200).json({"deleted" : this.changes});
