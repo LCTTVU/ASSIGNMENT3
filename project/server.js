@@ -57,7 +57,7 @@ app.put("/phones/:id", (req, res, next) => {
                 res.status(400).json({ "error": res.message })
                 return;
             }
-			else if (row == "") {
+			else if (result.length < 1) {
 				res.status(404).json({});
 				return;
 			}
