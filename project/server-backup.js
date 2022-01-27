@@ -59,8 +59,6 @@ app.post("/phones", function(req, res, next) {
 	});
 })
 
-//TODO: fix put 404
-
 app.put("/phones/:id", function(req, res, next) {
 	var item = req.body;
     db.run(`UPDATE phones SET image = ?, brand = ?, model = ?, os = ?, screensize = ? WHERE id = ?`,
@@ -70,7 +68,7 @@ app.put("/phones/:id", function(req, res, next) {
                 res.status(400).json({ "error": res.message })
                 return;
             }
-			else if (this.changes == 0) {
+			else if (!result.id) {
 				res.status(404).json({});
 				return;
 			}
@@ -78,15 +76,13 @@ app.put("/phones/:id", function(req, res, next) {
     });
 });
 
-
-
 app.delete("/phones/:id", function(req, res, next) {
 	db.run("DELETE FROM phones WHERE id=" + [req.params.id], function(err, row) {
 		if (err) {
 			res.status(400).json({"error" : err.message});
 			return;
 		}
-		else if (this.changes == 0) {
+		else if (!row) {
 			res.status(404).json({});
 			return;
 		}
