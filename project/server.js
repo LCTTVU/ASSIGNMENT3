@@ -22,8 +22,12 @@ app.get("/phones", function(req, res, next) {
 
 app.get("/phones/:id", function(req, res, next) {
 	db.all("SELECT id, brand, model, os, image, screensize FROM phones WHERE id=" + [req.params.id], function(err, row) {
-		if (err ) {
+		if (err) {
 			res.status(400).json({"error" : err.message});
+			return;
+		}
+		else if (row == "") {
+			res.status(404).json({});
 			return;
 		}
 		return res.status(200).json({ row });
