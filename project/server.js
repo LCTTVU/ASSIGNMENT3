@@ -22,7 +22,7 @@ app.get("/phones", function(req, res, next) {
 
 app.get("/phones/:id", function(req, res, next) {
 	db.all("SELECT id, brand, model, os, image, screensize FROM phones WHERE id=" + [req.params.id], function(err, row) {
-		if (err) {
+		if (err ) {
 			res.status(400).json({"error" : err.message});
 			return;
 		}
@@ -44,7 +44,7 @@ app.post("/phones", function(req, res, next) {
 	});
 })
 
-app.patch("/phones/:id", (req, res, next) => {
+app.put("/phones/:id", (req, res, next) => {
     var item = req.body;
     db.run(`UPDATE phones SET image = ?, brand = ?, model = ?, os = ?, screensize = ? WHERE id = ?`,
 	[item.image, item.brand, item.model, item.os, item.screensize, item.id],
