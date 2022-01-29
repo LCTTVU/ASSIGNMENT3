@@ -37,6 +37,7 @@ app.get("/phones/:id", function(req, res, next) {
 			res.status(400).json({"error" : err.message});
 			return;
 		}
+		//if row is empty, return 404
 		else if (row.length < 1) {
 			res.status(404).json({});
 			return;
@@ -47,6 +48,7 @@ app.get("/phones/:id", function(req, res, next) {
 
 
 app.post("/phones", function(req, res, next) {
+	//Get item parameters from request body
 	var item = req.body;
 	db.run(`INSERT INTO phones (image, brand, model, os, screensize) VALUES (?,?,?,?,?)`,
 	[item['image'], item['brand'], item['model'], item['os'], item['screensize']],
@@ -59,9 +61,9 @@ app.post("/phones", function(req, res, next) {
 	});
 })
 
-//TODO: fix put 404
 
 app.put("/phones/:id", function(req, res, next) {
+	//Get item parameters from request body
 	var item = req.body;
     db.run(`UPDATE phones SET image = ?, brand = ?, model = ?, os = ?, screensize = ? WHERE id = ?`,
 	[item['image'], item['brand'], item['model'], item['os'],  item['screensize'], item['id']],
@@ -70,6 +72,7 @@ app.put("/phones/:id", function(req, res, next) {
                 res.status(400).json({ "error": res.message })
                 return;
             }
+			//no changes = item not found
 			else if (this.changes == 0) {
 				res.status(404).json({});
 				return;
@@ -79,13 +82,13 @@ app.put("/phones/:id", function(req, res, next) {
 });
 
 
-
 app.delete("/phones/:id", function(req, res, next) {
 	db.run("DELETE FROM phones WHERE id=" + [req.params.id], function(err, row) {
 		if (err) {
 			res.status(400).json({"error" : err.message});
 			return;
 		}
+		//no changes = item not found
 		else if (this.changes == 0) {
 			res.status(404).json({});
 			return;
