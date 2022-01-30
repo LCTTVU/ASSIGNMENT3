@@ -69,13 +69,23 @@
 
         <section id = "appendixA">
             <h2>Appendix A: Web Content Accessibility Guidelines (WCAG)</h2>
-            <p class = "description">This section will provide an evauation of our website according to the WCAG, <strong>using appropriate requirements</strong>, as our website is very basic and minimal.</p>
+            <p class = "description">This section will provide an evauation of our website according to the WCAG <strong>where appropriate to our website's contents</strong>, as it is very basic and minimal.</p>
 
             <div>
                 <div class = "subtitle">
                     <h3 id = "guideline1-1">Guideline 1.1 Text Alternatives: Provide text alternatives for any non-text content so that it can be changed into other forms people need, such as large print, braille, speech, symbols or simpler language.</h3>
                 </div>
                 <div class = "content">
+                    <p><strong class = "content-handle">We have met the following requirements:</strong></p>
+                    <ul>
+                        <li>H37: Using alt attributes on img elements</li>
+                        <li>FLASH1: Setting the name property for a non-text object</li>
+                    </ul>
+                    <p><strong class = "content-handle">We have <u>NOT</u>met the following requirements:</strong></p>
+                    <ul>
+                        <li>G196: Using a text alternative on one item within a group of images that describes all items in the group</li>
+                        <li>FLASH5: Combining adjacent image and text buttons for the same resource</li>
+                    </ul>
                     <ul>
                         <li>
                             <p><strong class = "content-handle">Controls, Input: </strong>As we have only a few buttons, we did not come across any issues with <u>names</u>.
@@ -85,20 +95,50 @@
                             </p>
                         </li>
                         <li>
-                            <p><i class = "guidelineEvaluation">We do not have the following: <strong>Time-Based Media, Tests, Sensory, CAPTCHA, Non-Text Decoration</strong>.</i></p>
+                            <p>We do not have the following: <strong>Time-Based Media, Tests, Sensory, CAPTCHA, Non-Text Decoration.</strong></p>
                         </li>
                     </ul>
+                    <p class = "guidelineEvaluation"></p>
                 </div>
             </div>
 
             <div>
                 <div class = "subtitle">
                     <h3 id = "guideline1-3">Guideline 1.3 Adaptable: Create content that can be presented in different ways (for example simpler layout) without losing information or structure.</h3>
+                </div>
+                <div class = "content">
                     <p><strong class = "content-handle">We have met the following requirements:</strong></p>
                     <ul>
-                        <li>
-
-                        </li>
+                        <li>G117: Using text to convey information that is conveyed by variations in presentation of text</li>
+                        <li>H51: Using table markup to present tabular information</li>
+                        <li>PDF6: Using table elements for table markup in PDF Documents</li>
+                        <li>H39: Using caption elements to associate data table captions with data tables</li>
+                        <li>H43: Using id and headers attributes to associate data cells with header cells in data tables</li>
+                        <li>H49: Using semantic markup to mark emphasized or special text</li>
+                        <li>G138: Using semantic markup whenever color cues are used</li>
+                        <li>PDF12: Providing name, role, value information for form fields in PDF documents <i class = "extradetails">fulfilled by having "placeholder" HTML tags</i></li>
+                        <li>FLASH25: Labeling a form control by setting its accessible name</li>
+                        <li>H48: Using ol, ul and dl for lists or groups of links</li>
+                        <li>H42: Using h1-h6 to identify headings</li>
+                        <li>H97: Grouping related links using the nav element</li>
+                        <li>ARIA2: Identifying a required field with the aria-required property <i class = "extradetails">fulfilled by having "required" HTML tags</i></li>
+                        <li>G141: Organizing a page using headings</li>
+                        <li>C22: Using CSS to control visual presentation of text</li>
+                        <li>SCR21: Using functions of the Document Object Model (DOM) to add content to a page</li>
+                    </ul>
+                    <p><strong class = "content-handle">We have <u>NOT</u>met the following requirements:</strong></p>
+                    <ul>
+                        <li>G140: Separating information and structure from presentation to enable different presentations</li>
+                        <li>H73: Using the summary attribute of the table element to give an overview of data tables</li>
+                        <li>H63: Using the scope attribute to associate header cells and data cells in data tables</li>
+                        <li>H44: Using label elements to associate text labels with form controls</li>
+                        <li>H65: Using the title attribute to identify form controls when the label element cannot be used</li>
+                        <li>FLASH32: Using auto labeling to associate text labels with form controls</li>
+                        <li>FLASH29: Setting the label property for form components</li>
+                        <li>PDF11: Providing links and link text using the Link annotation and the /Link structure element in PDF documents</li>
+                        <li>PDF17: Specifying consistent page numbering for PDF documents</li>
+                        <li>PDF21: Using List tags for lists in PDF documents</li>
+                        <li>G162: Positioning labels to maximize predictability of relationships</li>
                     </ul>
                 </div>
             </div>
