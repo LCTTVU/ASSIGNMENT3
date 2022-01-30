@@ -71,34 +71,39 @@
             <h2>Appendix A: Web Content Accessibility Guidelines (WCAG)</h2>
             <p class = "description">This section will provide an evauation of our website according to the WCAG <strong>where appropriate to our website's contents</strong>, as it is very basic and minimal.</p>
 
-            <div>
+            <div class = "guideline" id = "guideline1-1">
                 <div class = "subtitle">
-                    <h3 id = "guideline1-1">Guideline 1.1 Text Alternatives: Provide text alternatives for any non-text content so that it can be changed into other forms people need, such as large print, braille, speech, symbols or simpler language.</h3>
+                    <h3>Guideline 1.1 Text Alternatives: Provide text alternatives for any non-text content so that it can be changed into other forms people need, such as large print, braille, speech, symbols or simpler language.</h3>
                 </div>
                 <div class = "content">
-                    <p><strong class = "content-handle">We have met the following requirements:</strong></p>
-                    <ul>
-                        <li>H37: Using alt attributes on img elements</li>
-                        <li>FLASH1: Setting the name property for a non-text object</li>
-                        <li>C18: Using CSS margin and padding rules instead of spacer images for layout design</li>
-                        <li>FLASH27: Providing button labels that describe the purpose of a button</li>
-                        <li>FLASH25: Labeling a form control by setting its accessible name</li>
-                    </ul>
-                    <p><strong class = "content-handle">We have <u>NOT</u> met the following requirements:</strong></p>
-                    <ul>
-                        <li>G196: Using a text alternative on one item within a group of images that describes all items in the group</li>
-                        <li>FLASH5: Combining adjacent image and text buttons for the same resource</li>
-                        <li>H2: Combining adjacent image and text links for the same resource</li>
-                        <li>PDF1: Applying text alternatives to images with the Alt entry in PDF documents</li>
-                        <li>G196: Using a text alternative on one item within a group of images that describes all items in the group</li>
-                        <li>H45: Using longdesc</li>
-                        <li>H36: Using alt attributes on images used as submit buttons</li>
-                        <li>H24: Providing text alternatives for the area elements of image maps</li>
-                    </ul>
-                    <p class = "guidelineEvaluation">Overall, our website does <strong>NOT</strong> meet the criteria for success level A. Most of our missing requirements come from formatting images, as we were not paying enough attention to
+                    <div class = "subcontent">
+                        <p class = "content-handle"><strong>1.1.1 Non-text Content</strong></p>
+                        <p>We have met the following requirements:</p>
+                        <ul>
+                            <li>H37: Using alt attributes on img elements</li>
+                            <li>FLASH1: Setting the name property for a non-text object</li>
+                            <li>C18: Using CSS margin and padding rules instead of spacer images for layout design</li>
+                            <li>FLASH27: Providing button labels that describe the purpose of a button</li>
+                            <li>FLASH25: Labeling a form control by setting its accessible name</li>
+                        </ul>
+                        <p>We have <u>NOT</u> met the following requirements:</p>
+                        <ul>
+                            <li>G196: Using a text alternative on one item within a group of images that describes all items in the group</li>
+                            <li>FLASH5: Combining adjacent image and text buttons for the same resource</li>
+                            <li>H2: Combining adjacent image and text links for the same resource</li>
+                            <li>PDF1: Applying text alternatives to images with the Alt entry in PDF documents</li>
+                            <li>G196: Using a text alternative on one item within a group of images that describes all items in the group</li>
+                            <li>H45: Using longdesc</li>
+                            <li>H36: Using alt attributes on images used as submit buttons</li>
+                            <li>H24: Providing text alternatives for the area elements of image maps</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class = "evaluation">
+                    <p>Overall, our website does <strong>NOT</strong> meet the criteria for success level A. Most of our missing requirements come from formatting images, as we were not paying enough attention to
                         users that want to print the webpage, or users with poor network speed / device performance.
                     </p>
-                    <p class = "guidelineEvaluation">With the exception of the side navigation bar, each of our buttons had names that accurately describes its purpose.
+                    <p>With the exception of the side navigation bar, each of our buttons had names that accurately describes its purpose.
                         As for the sidebar, the functionality of the buttons is not explicitly stated.
                         However, this should not pose a large problem for most internet users, as most websites use similar navigating systems.
                     </p>
