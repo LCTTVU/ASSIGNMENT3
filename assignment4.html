@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Synthesis & Evaluation</title>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
     <p id="contentlink"><a href = "#contents">Contents</a></p>
@@ -67,17 +68,22 @@
         <h2>Accessibility Evaluation</h2>
 
         <section id = "appendixA">
-            <h2>Appendix A: Web Content Accessibility Guidelines (WCAG)</h2>
-            <p class = "description">This section will provide an evaluation of our website according to the WCAG, <strong>whether it meets level A or not, <u>where appropriate to our website's contents</u></strong>, as the webpage is very basic and minimal.</p>
+            <p class = "description">This section will provide an evaluation of our website according to the WCAG, <strong>whether it meets level A or not, <u>where relevant & appropriate to our website's contents</u></strong>, as the webpage is very basic and minimal.</p>
+            <table>
+                <caption><h3>Appendix A: Web Content Accessibility Guidelines (WCAG)</h3></caption>
+                <tr>
+                    <th class = "guideline" colspan = "2">Guideline</th>
+                    <th class = "level">Level</th>
+                    <th class = "requirements">Fulfilled Requirements</th>
+                    <th class = "requirements">Missing Requirements</th>
+                    <th class = "guidelineEvaluation">Evaluation</th>
+                </tr>
 
-            <div class = "guideline" id = "guideline1-1">
-                <div class = "subtitle">
-                    <h3>Guideline 1.1 Text Alternatives: Provide text alternatives for any non-text content so that it can be changed into other forms people need, such as large print, braille, speech, symbols or simpler language.</h3>
-                </div>
-                <div class = "content">
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>1.1.1 Non-text Content - Level A</strong></p>
-                        <p>We have met the following requirements:</p>
+                <tr>
+                    <td class = "guideline">Guideline 1.1 Text Alternatives</td>
+                    <td class = "subguideline">1.1.1: Non-text Content</td>
+                    <td class = "level">A</td>
+                    <td class = "requirements">
                         <ul>
                             <li>H37: Using alt attributes on img elements</li>
                             <li>FLASH1: Setting the name property for a non-text object</li>
@@ -85,295 +91,316 @@
                             <li>FLASH27: Providing button labels that describe the purpose of a button</li>
                             <li>FLASH25: Labeling a form control by setting its accessible name</li>
                         </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
+                    </td>
+                    <td class = "requirements">
                         <ul>
-                            <li>G196: Using a text alternative on one item within a group of images that describes all items in the group</li>
                             <li>FLASH5: Combining adjacent image and text buttons for the same resource</li>
-                            <li>H2: Combining adjacent image and text links for the same resource</li>
-                            <li>PDF1: Applying text alternatives to images with the Alt entry in PDF documents</li>
                             <li>G196: Using a text alternative on one item within a group of images that describes all items in the group</li>
-                            <li>H45: Using longdesc</li>
+                            <li>H2: Combining adjacent image and text links for the same resource</li>
                             <li>H36: Using alt attributes on images used as submit buttons</li>
-                            <li>H24: Providing text alternatives for the area elements of image maps</li>
                         </ul>
-                    </div>
-                </div>
-                <div class = "guidelineEvaluation">
-                    <p>Overall, our website does <strong>NOT</strong> meet the criteria for success level A.
-                        Most of our missing requirements come from formatting images, as PDF or users with poor network/devices were not high up on our priorities for the assignment.
-                    </p>
-                    <p>With the exception of the side navigation bar, each of our buttons had names that accurately describes its purpose.
-                        As for the sidebar, the functionality of the buttons is not explicitly stated.
-                        However, this should not pose a large problem for most internet users, as most websites use similar navigating systems.
-                    </p>
-                </div>
-            </div>
-
-            <div class = "guideline" id = "guideline1-3">
-                <div class = "subtitle">
-                    <h3>Guideline 1.3 Adaptable: Create content that can be presented in different ways (for example simpler layout) without losing information or structure.</h3>
-                </div>
-                <div class = "content">
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>1.3.1 Info and Relationships - Level A</strong></p>
-                        <p>We have met the following requirements:</p>
+                    </td>
+                    <td class = "guidelineEvaluation">
+                        <p><strong>The website does NOT meet the criteria for success level A.</strong></p>
                         <ul>
-                            <li>G117: Using text to convey information that is conveyed by variations in presentation of text</li>
-                            <li>H51: Using table markup to present tabular information</li>
-                            <li>PDF6: Using table elements for table markup in PDF Documents</li>
-                            <li>H39: Using caption elements to associate data table captions with data tables</li>
-                            <li>H43: Using id and headers attributes to associate data cells with header cells in data tables</li>
-                            <li>H49: Using semantic markup to mark emphasized or special text</li>
-                            <li>PDF12: Providing name, role, value information for form fields in PDF documents <i class = "extradetails">fulfilled by having "placeholder" HTML tags</i></li>
-                            <li>FLASH25: Labeling a form control by setting its accessible name</li>
-                            <li>H48: Using ol, ul and dl for lists or groups of links</li>
-                            <li>H42: Using h1-h6 to identify headings</li>
-                            <li>H97: Grouping related links using the nav element</li>
-                            <li>ARIA2: Identifying a required field with the aria-required property <i class = "extradetails">fulfilled by having "required" HTML tags</i></li>
-                            <li>G141: Organizing a page using headings</li>
+                            <li>With the exception of the side navigation bar, each of our buttons had names that accurately describes its purpose.</li>
+                            <li>As for the sidebar, the functionality of the buttons is not explicitly stated.</li>
+                            <li>Most of our missing requirements come from formatting images, we did not consider PDF or users with poor network/devices during the assignment.</li>
+                        </ul>
+                    </td>    
+                </tr>
+
+                <tr>
+                    <td rowspan = "2" id = "guideline1-3" class = "guideline">Guideline 1.3 Adaptable</td>
+                    <td class = "subguideline">1.3.1: Info and Relationships</td>
+                    <td class = "level">A</td>
+                    <td class = "requirements">
+                        <ul>
+                            <li>ARIA2: Identifying a required field with the aria-required property <i class = "extradetails"><u>fulfilled by having "required" HTML tags</u></i></li>
                             <li>C22: Using CSS to control visual presentation of text</li>
+                            <li>G117: Using text to convey information that is conveyed by variations in presentation of text</li>
+                            <li>G141: Organizing a page using headings</li>
+                            <li>H39: Using caption elements to associate data table captions with data tables</li>
+                            <li>H42: Using h1-h6 to identify headings</li>
+                            <li>H43: Using id and headers attributes to associate data cells with header cells in data tables</li>
+                            <li>H48: Using ol, ul and dl for lists or groups of links</li>
+                            <li>H49: Using semantic markup to mark emphasized or special text</li>
+                            <li>H51: Using table markup to present tabular information</li>
+                            <li>H97: Grouping related links using the nav element</li>
                         </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
+                    </td>
+                    <td class = "requirements">
                         <ul>
-                            <li>G140: Separating information and structure from presentation to enable different presentations</li>
-                            <li>H73: Using the summary attribute of the table element to give an overview of data tables</li>
-                            <li>H63: Using the scope attribute to associate header cells and data cells in data tables</li>
-                            <li>H44: Using label elements to associate text labels with form controls</li>
-                            <li>H65: Using the title attribute to identify form controls when the label element cannot be used</li>
-                            <li>FLASH32: Using auto labeling to associate text labels with form controls</li>
                             <li>FLASH29: Setting the label property for form components</li>
-                            <li>PDF11: Providing links and link text using the Link annotation and the /Link structure element in PDF documents</li>
+                            <li>H44: Using label elements to associate text labels with form controls</li>
+                            <li>H63: Using the scope attribute to associate header cells and data cells in data tables</li>
+                            <li>H65: Using the title attribute to identify form controls when the label element cannot be used</li>
+                            <li>H73: Using the summary attribute of the table element to give an overview of data tables</li>
                             <li>PDF17: Specifying consistent page numbering for PDF documents</li>
-                            <li>PDF21: Using List tags for lists in PDF documents</li>
-                            <li>G162: Positioning labels to maximize predictability of relationships</li>
                         </ul>
-                    </div>
-
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>1.3.2 Meaningful Sequence - Level A</strong></p>
-                        <p>We have met the following requirements:</p>
+                    </td>
+                    <td class = "guidelineEvaluation">
+                        <p><strong>The website meets the criteria for success level A.</strong></p>
                         <ul>
                             <li></li>
                         </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class = "subguideline">1.3.2: Meaningful Sequence</td>
+                    <td class = "level">A</td>
+                    <td class = "requirements">
+                        <ul>
+                            <li>C27: Making the DOM order match the visual order</li>
+                            <li>G57: Ordering the content in a meaningful sequence</li>
+                            <li>PDF3: Ensuring correct tab and reading order in PDF documents</li>
+                        </ul>
+                    </td>
+                    <td class = "requirements"></td>
+                    <td class = "guidelineEvaluation">
+                        <p><strong>The website meets the criteria for success level A.</strong></p>
                         <ul>
                             <li></li>
                         </ul>
-                    </div>
+                    </td>
+                </tr>
 
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>1.3.3 Sensory Characteristics - Level A</strong></p>
-                        <p>We have met the following requirements:</p>
+                <tr>
+                    <td rowspan = "3" id = "guideline1-4" class = "guideline">Guideline 1.4 Distinguishable</td>
+                    <td class = "subguideline">1.4.1 & 1.4.3: Use of Color & Contrast</td>
+                    <td class = "level">A</td>
+                    <td class = "requirements">
+                        <ul>
+                            <li>C15: Using CSS to change the presentation of a user interface component when it receives focus</li>
+                            <li>G14: Ensuring that information conveyed by color differences is also available in text</li>
+                            <li>G183: Using a contrast ratio of 3:1 <i class = "extradetails"><u>partially fulfilled</u></i></li>
+                        </ul>
+                    </td>
+                    <td class = "requirements">
+                        <ul>
+                            <li>G174: Providing a control with a sufficient contrast ratio that allows users to switch to a presentation that uses sufficient contrast</li>
+                            <li>G205: Including a text cue for colored form control labels</li>
+                        </ul>
+                    </td>
+                    <td class = "guidelineEvaluation">
+                        <p><strong>The website does NOT meet the criteria for success level A.</strong></p>
                         <ul>
                             <li></li>
                         </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class = "subguideline">1.4.4: Resize Text</td>
+                    <td class = "level">AA</td>
+                    <td class = "requirements">
+                        <ul>
+                            <li>C12: Using percent for font sizes</li>
+                            <li>C17: Scaling form elements which contain text</li>
+                            <li>C20: Using relative measurements to set column widths <i class = "extradetails"><u>partially fulfilled</u></i></li>
+                            <li>C22: Using CSS to control visual presentation of text</li>
+                            <li>G142: Using a technology that has commonly-available user agents that support zoom</li>
+                        </ul>
+                    </td>
+                    <td class = "requirements">
+                        <ul>
+                            <li>C28: Specifying the size of text containers using em units</li>
+                            <li>G179: Ensuring that there is no loss of content or functionality when the text resizes and text containers do not change their width</li>
+                        </ul>
+                    </td>
+                    <td class = "guidelineEvaluation">
+                        <p><strong></strong></p>
                         <ul>
                             <li></li>
                         </ul>
-                    </div>
+                    </td>
+                </tr>
 
-                    <div class = "guidelineEvaluation">
-                        <p></p>
-                        <p></p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class = "guideline" id = "guideline1-4">
-                <div class = "subtitle">
-                    <h3>Guideline 1.4 Distinguishable: Make it easier for users to see and hear content including separating foreground from background.</h3>
-                </div>
-                <div class = "content">
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>1.4.1 Use of Color - Level A</strong></p>
-                        <p>We have met the following requirements:</p>
+                <tr>
+                    <td class = "subguideline">1.4.8: Visual Presentation</td>
+                    <td class = "level">AAA</td>
+                    <td class = "requirements">
+                        <ul>
+                            <li>C19: Specifying alignment either to the left OR right in CSS</li>
+                            <li>C21: Specifying line spacing in CSS</li>
+                            <li>C23: Specifying text and background colors of secondary content such as banners, features and navigation in CSS while not specifying text and background colors of the main content</li>
+                            <li>C24: Using percentage values in CSS for container sizes</li>
+                        </ul>
+                    </td>
+                    <td class = "requirements">
+                        <ul>
+                            <li>G188: Providing a button on the page to increase line spaces and paragraph spaces</li>
+                            <li>G204: Not interfering with the user agent's reflow of text as the viewing window is narrowed</li>
+                        </ul>
+                    </td>
+                    <td class = "guidelineEvaluation">
+                        <p><strong></strong></p>
                         <ul>
                             <li></li>
                         </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td rowspan = "3" id = "guideline2-1" class = "guideline">Guideline 2.1 Keyboard Accessible</td>
+                    <td class = "subguideline">2.1.1: Keyboard</td>
+                    <td class = "level">A</td>
+                    <td class = "requirements">
                         <ul>
                             <li></li>
                         </ul>
-                    </div>
-
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>1.4.3 Contrast (Minimum) - Level A</strong></p>
-                        <p>We have met the following requirements:</p>
+                    </td>
+                    <td class = "requirements">
                         <ul>
                             <li></li>
                         </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
+                    </td>
+                    <td class = "guidelineEvaluation">
+                        <p><strong></strong></p>
                         <ul>
                             <li></li>
                         </ul>
-                    </div>
+                    </td>
+                </tr>
 
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>1.4.4 Resize Text - Level AA</strong></p>
-                        <p>We have met the following requirements:</p>
+                <tr>
+                    <td class = "subguideline">2.1.2: No Keyboard Trap</td>
+                    <td class = "level">A</td>
+                    <td class = "requirements">
                         <ul>
                             <li></li>
                         </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
+                    </td>
+                    <td class = "requirements">
                         <ul>
                             <li></li>
                         </ul>
-                    </div>
-
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>1.4.8 Visual Presentation - Level AAA</strong></p>
-                        <p>We have met the following requirements:</p>
+                    </td>
+                    <td class = "guidelineEvaluation">
+                        <p><strong></strong></p>
                         <ul>
                             <li></li>
                         </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class = "subguideline">2.1.3: Keyboard (No Exception)</td>
+                    <td class = "level">AAA</td>
+                    <td class = "requirements">
                         <ul>
                             <li></li>
                         </ul>
-                    </div>  
-
-                    <div class = "GuidelineEvaluation">
-                        <p></p>
-                        <p></p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class = "guideline" id = "guideline2-1">
-                <div class = "subtitle">
-                    <h3>Guideline 2.1 Keyboard Accessible: Make all functionality available from a keyboard.</h3>
-                </div>
-
-                <div class = "content">
-
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>2.1.1 Keyboard - Level A</strong></p>
-                        <p>We have met the following requirements:</p>
+                    </td>
+                    <td class = "requirements">
                         <ul>
                             <li></li>
                         </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
+                    </td>
+                    <td class = "guidelineEvaluation">
+                        <p><strong></strong></p>
                         <ul>
                             <li></li>
                         </ul>
-                    </div>
+                    </td>
+                </tr>
 
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>2.1.2 No Keyboard Trap - Level A</strong></p>
-                        <p>We have met the following requirements:</p>
+                <tr>
+                    <td rowspan = "4" id = "guideline2-4" class = "guideline">Guideline 2.4 Navigable</td>
+                    <td class = "subguideline">2.4.4: Link Purpose (In Context)</td>
+                    <td class = "level">A</td>
+                    <td class = "requirements">
                         <ul>
                             <li></li>
                         </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
+                    </td>
+                    <td class = "requirements">
                         <ul>
                             <li></li>
                         </ul>
-                    </div>
-
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>2.1.3 Keyboard (No Exception) - Level AAA</strong></p>
-                        <p>We have met the following requirements:</p>
+                    </td>
+                    <td class = "guidelineEvaluation">
+                        <p><strong></strong></p>
                         <ul>
                             <li></li>
                         </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class = "subguideline">2.4.5: Multiple Ways</td>
+                    <td class = "level">AA</td>
+                    <td class = "requirements">
                         <ul>
                             <li></li>
                         </ul>
-                    </div>
-
-                    <div class = "GuidelineEvaluation">
-                        <p></p>
-                        <p></p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class = "guideline" id = "guideline2-4">
-                <div class = "subtitle">
-                    <h3>Guideline 2.4 Navigable: Provide ways to help users navigate, find content, and determine where they are.</h3>
-                </div>
-
-                <div class = "content">
-
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>2.4.4 Link Purpose (In Context) - Level A</strong></p>
-                        <p>We have met the following requirements:</p>
+                    </td>
+                    <td class = "requirements">
                         <ul>
                             <li></li>
                         </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
+                    </td>
+                    <td class = "guidelineEvaluation">
+                        <p><strong></strong></p>
                         <ul>
                             <li></li>
                         </ul>
-                    </div>
+                    </td>
+                </tr>
 
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>2.4.5 - Multiple Ways - Level AA</strong></p>
-                        <p>We have met the following requirements:</p>
+                <tr>
+                    <td class = "subguideline">2.4.6: Headings and Labels</td>
+                    <td class = "level">AA</td>
+                    <td class = "requirements">
                         <ul>
                             <li></li>
                         </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
+                    </td>
+                    <td class = "requirements">
                         <ul>
                             <li></li>
                         </ul>
-                    </div>
+                    </td>
+                    <td class = "guidelineEvaluation">
+                        <p><strong></strong></p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
 
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>2.4.6 - Headings and Labels - Level AA</strong></p>
-                        <p>We have met the following requirements:</p>
+                <tr>
+                    <td class = "subguideline">2.4.8: Location</td>
+                    <td class = "level">AAA</td>
+                    <td class = "requirements">
                         <ul>
                             <li></li>
                         </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
+                    </td>
+                    <td class = "requirements">
                         <ul>
                             <li></li>
                         </ul>
-                    </div>
+                    </td>
+                    <td class = "guidelineEvaluation">
+                        <p><strong></strong></p>
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </td>
+                </tr>
 
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>2.4.8 - Location - Level AAA</strong></p>
-                        <p>We have met the following requirements:</p>
-                        <ul>
-                            <li></li>
-                        </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
-                        <ul>
-                            <li></li>
-                        </ul>
-                    </div>
-
-                    <div class = "subcontent">
-                        <p class = "content-handle"><strong>2.4.10 - Section Headings - Level AAA</strong></p>
-                        <p>We have met the following requirements:</p>
-                        <ul>
-                            <li></li>
-                        </ul>
-                        <p>We have <u>NOT</u> met the following requirements:</p>
-                        <ul>
-                            <li></li>
-                        </ul>
-                    </div>
-
-                    <div class = "GuidelineEvaluation">
-                        <p></p>
-                        <p></p>
-                    </div>
-
-                </div>
-
-            </div>
+            </table>
+            
 
         </section>
 
         <section id = "appendixB">
-            <h2>Appendix B: TA Feedback Assignment 1 & 2</h2>
+            <p class = "description"></p>
+            <table>
+                <caption><h3>Appendix B: TA Feedback Assignment 1 & 2</h3></caption>
+            </table>
         </section>
 
     </section>

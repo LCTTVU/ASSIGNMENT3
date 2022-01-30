@@ -3,6 +3,6 @@ table, th, td {
 	border-collapse: collapse;
 }
 
-.level {
+.level, .guideline {
     text-align: center;
 }
