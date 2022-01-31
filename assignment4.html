@@ -201,22 +201,23 @@
                     <td class = "requirements">
                         <ul>
                             <li>C12: Using percent for font sizes</li>
-                            <li>C17: Scaling form elements which contain text</li>
                             <li>C20: Using relative measurements to set column widths <i class = "extradetails"><u>partially fulfilled</u></i></li>
                             <li>C22: Using CSS to control visual presentation of text</li>
-                            <li>G142: Using a technology that has commonly-available user agents that support zoom</li>
                         </ul>
                     </td>
                     <td class = "requirements">
                         <ul>
+                            <li>C17: Scaling form elements which contain text</li>
                             <li>C28: Specifying the size of text containers using em units</li>
                             <li>G179: Ensuring that there is no loss of content or functionality when the text resizes and text containers do not change their width</li>
                         </ul>
                     </td>
                     <td class = "guidelineEvaluation">
-                        <p><strong></strong></p>
+                        <p><strong>The website fulfills the basic CSS requirements for this guideline.</strong></p>
                         <ul>
-                            <li></li>
+                            <li>We used percentages for most of our containers (columns, table, navbar) and font sizes, as it is relative and easier to scale when the viewport dimensions change.</li>
+                            <li>Our form elements do not scale to the amount of text due to the restrictions of the table.</li>
+                            <li>As we were using percentage instead of em units for text containers' sizes, their width can change when the viewport changes, there is loss of content (of the table) when printing the webpage in portrait mode.</li>
                         </ul>
                     </td>
                 </tr>
