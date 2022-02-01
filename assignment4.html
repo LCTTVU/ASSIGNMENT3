@@ -67,6 +67,7 @@
         <p>Appendix B will compile and categorize TA feedback. </p>
         <p>Overall, our website comes close to meeting Accessibility Level A. The website meets many of the more important requirements listed by the WCAG, and the impact of unfulfilled requirements is not high due to the limited amount of content (text, links, images, etc.) on our page.</p>
         <p>With some improvements, which will be discussed in the Improvement Plan section, the website can reach success level A.</p>
+        <p>This documentation uses a CSS file "stylesheetassignment4.css" to create table borders for it to be more readable.</p>
     </section>
 
     <section id = "evaluation">
@@ -136,13 +137,12 @@
                             <li>FLASH29: Setting the label property for form components</li>
                             <li>H44: Using label elements to associate text labels with form controls</li>
                             <li>H65: Using the title attribute to identify form controls when the label element cannot be used</li>
-                            <li>H73: Using the summary attribute of the table element to give an overview of data tables</li>
                         </ul>
                     </td>
                     <td class = "guidelineEvaluation">
                         <p><strong>The website does NOT meet success level A.</strong></p>
                         <ul>
-                            <li>We found that including a title/label for the form was not necessary since the table header already gave info about what the user needed to input.</li>
+                            <li>We initially found that including a title/label for the form was not necessary since the table header already gave info about what the user needed to input.</li>
                             <li>Combine this with the placeholders for the input fields, users should have a general idea of what they need to input.</li>
                             <li>However, this can cause problems when the table has a large number of items, as users may have to scroll up to check the headings / or have already filled out some fields wrong (as the placeholders will disappear).</li>
                             <li>We will discuss how to address this problem in the Improvements section.</li>
@@ -202,13 +202,13 @@
                     <td class = "requirements">
                         <ul>
                             <li>C12: Using percent for font sizes</li>
-                            <li>C20: Using relative measurements to set column widths <i class = "extradetails"><u>partially fulfilled</u></i></li>
+                            <li>C20: Using relative measurements to set column widths</li>
                             <li>C22: Using CSS to control visual presentation of text</li>
+                            <li>SCR34: Calculating size and position in a way that scales with text size</li>
                         </ul>
                     </td>
                     <td class = "requirements">
                         <ul>
-                            <li>C28: Specifying the size of text containers using em units</li>
                             <li>G179: Ensuring that there is no loss of content or functionality when the text resizes and text containers do not change their width</li>
                         </ul>
                     </td>
@@ -216,8 +216,7 @@
                         <p><strong>The website fulfills the basic CSS requirements for this guideline.</strong></p>
                         <ul>
                             <li>We used percentages for most of our containers (columns, table, navbar) and font sizes, as it is relative and easier to scale when the viewport dimensions change.</li>
-                            <li>Our form elements do not scale to the amount of text due to the restrictions of the table.</li>
-                            <li>As we were using percentage instead of em units for text containers' sizes, their width can change when the viewport changes, there is loss of content (of the table) when printing the webpage in portrait mode.</li>
+                            <li>However, this can cause problems with resizing widths, and there is loss of content of the table or navbar when the viewport is too narrow.</li>
                         </ul>
                     </td>
                 </tr>
